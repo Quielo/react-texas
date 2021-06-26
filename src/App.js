@@ -1,43 +1,29 @@
 import './App.css';
 import Decker from './components/deck';
-import Phand from './components/hands';
-
-//const port = process.env.Port || 4001;
-//const express = require('express');
-//const app = express();
-
-//app.use(express.static('public'));
-//app.set('port', port)
-
-///const { Deck, Hand } = require('./components/deck');
-
-///const deck = new Deck();
-
-///let table = deck.dealTable(5);
-
-//app.get('/table', (req, res) => {
-//  res.send(table);
-//});
-
-//app.get('/deck/:size', (req, res) => {
-//  const { size } = req.params;
-//  res.send(deck.dealTable(size));
-//});
 
 function Home() {
   return (
     <div className="App">
+
       <header>
       </header>
+
       <body className="Home-body">
+
         <h1>Casino Texas Hold'em Poker</h1>
+
         <h2>Table</h2>
-        <Decker />
-        <div class="deck table"></div>
+        <div class="deck table">
+        <Decker title="Table" path="table" flipped="2" />
+        </div>
+
         <h2>Player's Hand</h2>
-        <Phand />
-        <div class="deck hand"></div>
+        <div class="deck hand">
+        <Decker title="Hand" path="deck/2" flipped="2" flipCards="flipCards" />
+        </div>
+
       </body>
+      
     </div>
   );
 }
